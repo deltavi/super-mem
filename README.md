@@ -4,4 +4,4 @@ Utility to manage Node.js memory
 
 ## Install
 
-  npm install super-mem
+    npm install super-mem
