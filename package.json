@@ -7,6 +7,11 @@
 		"test": "mocha --ui tdd test"
 	},
 	"author": "Vincenzo De Vivo <info@vincenzodevivo.com>",
+	"homepage": "https://github.com/deltavi/super-mem",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/deltavi/super-mem.git"
+	},
 	"license": "MIT",
 	"keywords": [
 		"mem",
