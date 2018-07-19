@@ -1,4 +1,4 @@
-# ![SuperMem](docs/super-mem.png) SuperMem
+# ![super-mem](docs/super-mem.png) super-mem
 
 Utility to manage Node.js memory
 
