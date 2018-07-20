@@ -44,8 +44,6 @@ Result:
 }
 ```
 
-Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Memory usage object
-
 ### printMemoryStatus
 
 Print the memory status on console
