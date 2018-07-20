@@ -1,27 +1,35 @@
 {
-	"name": "super-mem",
-	"version": "0.0.1",
-	"description": "Utility to manage Node.js memory",
-	"main": "index.js",
-	"scripts": {
-		"test": "mocha --ui tdd test"
-	},
-	"author": "Vincenzo De Vivo <info@vincenzodevivo.com>",
-	"homepage": "https://github.com/deltavi/super-mem",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/deltavi/super-mem.git"
-	},
-	"license": "MIT",
-	"keywords": [
-		"mem",
-		"memory",
-		"usage",
-		"utility",
-		"super",
-		"supermem"
-	],
-	"devDependencies": {
-		"mocha": "^5.2.0"
-	}
+  "name": "super-mem",
+  "version": "0.0.1",
+  "description": "Utility to manage Node.js memory",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --ui tdd test",
+    "doc": "documentation readme index.js --section=API"
+  },
+  "author": "Vincenzo De Vivo <info@vincenzodevivo.com>",
+  "homepage": "https://github.com/deltavi/super-mem",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/deltavi/super-mem.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mem",
+    "memory",
+    "usage",
+    "utility",
+    "super",
+    "supermem"
+  ],
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "mocha-jshint": "^2.3.1",
+    "documentation": "^8.0.2"
+  },
+  "dependencies": {
+    "pretty-bytes": "^5.1.0",
+    "repeat-string": "^1.6.1"
+  }
 }
