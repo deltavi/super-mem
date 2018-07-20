@@ -14,6 +14,7 @@ Utility to manage Node.js memory
 
 -   [memoryUsage](#memoryusage)
     -   [Parameters](#parameters)
+    -   [Examples](#examples)
 -   [printMemoryStatus](#printmemorystatus)
     -   [Parameters](#parameters-1)
 -   [printObject](#printobject)
@@ -27,7 +28,9 @@ Returns an object describing the memory usage of the Node.js process measured in
 
 -   `hrOnly` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** Human readable format only, default `false`
 
-Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Memory usage object, e.g.:```json
+#### Examples
+
+```javascript
 {
 "rss": 42360832,
 "heapTotal": 35254272,
@@ -39,6 +42,8 @@ Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/G
 "externalHR": "108 kB"
 }
 ```
+
+Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Memory usage object, e.g.:
 
 ### printMemoryStatus
 
