@@ -31,19 +31,20 @@ Returns an object describing the memory usage of the Node.js process measured in
 #### Examples
 
 ```javascript
+Result:
 {
-"rss": 42360832,
-"heapTotal": 35254272,
-"heapUsed": 16044848,
-"external": 108125,
-"rssHR": "42.4 MB",
-"heapTotalHR": "35.3 MB",
-"heapUsedHR": "16 MB",
-"externalHR": "108 kB"
+ "rss": 42360832,
+ "heapTotal": 35254272,
+ "heapUsed": 16044848,
+ "external": 108125,
+ "rssHR": "42.4 MB",
+ "heapTotalHR": "35.3 MB",
+ "heapUsedHR": "16 MB",
+ "externalHR": "108 kB"
 }
 ```
 
-Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Memory usage object, e.g.:
+Returns **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Memory usage object
 
 ### printMemoryStatus
 
