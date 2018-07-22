@@ -1,4 +1,4 @@
-# ![super-mem](docs/super-mem.png) Super Mem
+# ![super-mem](docs/super-mem.png) Super Mem [![Build Status](https://travis-ci.org/deltavi/super-mem.svg?branch=master)](https://travis-ci.org/deltavi/super-mem)
 
 Utility to manage Node.js memory
 
