@@ -1,4 +1,8 @@
 language: node_js
+cache:
+  directories:
+    - ~/.npm # cache npm's cache
+    - ~/npm # cache latest npm
 matrix:
   include:
     - node_js: "10"
