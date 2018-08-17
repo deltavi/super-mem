@@ -24,7 +24,8 @@ Utility to manage Node.js memory
 
 ## memoryUsage
 
-Returns an object describing the memory usage of the Node.js process measured in bytes and human readable format
+Returns an object describing the memory usage of the Node.js process measured in bytes and human readable format.
+Note that it uses base-10.
 
 ### Parameters
 
@@ -47,7 +48,8 @@ Returns an object describing the memory usage of the Node.js process measured in
 
 ## osMemory
 
-Returns an object describing the OS memory measured in bytes and human readable format
+Returns an object describing the OS memory measured in bytes and human readable format.
+Note that it uses base-10.
 
 ### Parameters
 

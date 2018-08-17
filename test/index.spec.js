@@ -6,7 +6,7 @@ var superMem = require('../index');
 
 suite('super-mem', function () {
   suite('#memoryUsage()', function () {
-    test('should return node memory usage', function () {
+    test('should return the node memory usage', function () {
       const mem = superMem.memoryUsage();
       const exMem = expect(mem);
       console.info(JSON.stringify(mem, null, 4));
@@ -25,7 +25,7 @@ suite('super-mem', function () {
   });
 
   suite('#osMemory()', function () {
-    test('should return OS memory', function () {
+    test('should return the OS memory', function () {
       const mem = superMem.osMemory();
       const exMem = expect(mem);
       console.info(JSON.stringify(mem, null, 4));
@@ -40,13 +40,34 @@ suite('super-mem', function () {
   });
 
   suite('#printMemoryStatus()', function () {
-    test('should print memory status', function () {
+    test('should print the memory status', function () {
       superMem.printMemoryStatus();
     });
   });
 
+  suite('#convertObjInHumanReadableFormat()', function () {
+    test('should return the converted object', function () {
+      const mem = superMem.convertObjInHumanReadableFormat({ mem1: 1000 });
+      const exMem = expect(mem);
+      console.info(JSON.stringify(mem, null, 4));
+      assert.equal(Object.keys(mem).length, 2);
+      exMem.to.have.property('mem1').to.be.a('number');
+      exMem.to.have.property('mem1HR').to.be.a('string');
+      assert.equal(mem.mem1, 1000);
+      assert.equal(mem.mem1HR, '1 kB');
+    });
+    test('should return the converted object, only in human readable format', function () {
+      const mem = superMem.convertObjInHumanReadableFormat({ mem1: 1000 }, true);
+      const exMem = expect(mem);
+      console.info(JSON.stringify(mem, null, 2));
+      assert.equal(Object.keys(mem).length, 1);
+      exMem.to.have.property('mem1').to.be.a('string');
+      assert.equal(mem.mem1, '1 kB');
+    });
+  });
+
   suite('#printObject()', function () {
-    test('should print a test object', function () {
+    test('should print the test object', function () {
       superMem.printObject("Test 1", { t: 1 });
       superMem.printObject("Object to print", { value: "text 1" });
     });

@@ -6,13 +6,15 @@ const os = require('os');
 
 /**
  * @private
- * Returns an object with values in bytes and human readable format
+ * Returns an object with values in bytes and human readable format.
+ * Note that it uses base-10. 
  * 
+ * @param {Object} [memoryObject] Object to convert
  * @param {boolean} [hrOnly] Human readable format only, default `false`
  * @example
  * {
- *   "mem1": 17073917952,
- *   "mem1HR": "17.1 GB"
+ *   "mem1": 1000,
+ *   "mem1HR": "1 KB"
  * }
  */
 exports.convertObjInHumanReadableFormat = function (memoryObject, hrOnly) {
@@ -32,7 +34,8 @@ exports.convertObjInHumanReadableFormat = function (memoryObject, hrOnly) {
 };
 
 /**
- * Returns an object describing the memory usage of the Node.js process measured in bytes and human readable format
+ * Returns an object describing the memory usage of the Node.js process measured in bytes and human readable format.
+ * Note that it uses base-10. 
  * 
  * @param {boolean} [hrOnly] Human readable format only, default `false`
  * @example
@@ -53,8 +56,8 @@ exports.memoryUsage = function (hrOnly) {
 };
 
 /**
- * Returns an object describing the OS memory measured in bytes and human readable format
- * 
+ * Returns an object describing the OS memory measured in bytes and human readable format.
+ * Note that it uses base-10. 
  * @param {boolean} [hrOnly] Human readable format only, default `false`
  * @example
  * {
