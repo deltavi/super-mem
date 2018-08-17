@@ -62,10 +62,10 @@ Note that it uses base-10.
 
 ```javascript
 {
-    "totalmem": 17073917952,
-    "freemem": 11155980288,
-    "totalmemHR": "17.1 GB",
-    "freememHR": "11.2 GB"
+    "totalMem": 17073917952,
+    "freeMem": 11155980288,
+    "totalMemHR": "17.1 GB",
+    "freeMemHR": "11.2 GB"
 }
 ```
 
