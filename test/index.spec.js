@@ -30,12 +30,12 @@ suite('super-mem', function () {
       const exMem = expect(mem);
       console.info(JSON.stringify(mem, null, 4));
       assert.equal(Object.keys(mem).length, 4);
-      exMem.to.have.property('totalmem').to.be.a('number');
-      exMem.to.have.property('freemem').to.be.a('number');
+      exMem.to.have.property('totalMem').to.be.a('number');
+      exMem.to.have.property('freeMem').to.be.a('number');
 
       //Human Readable
-      exMem.to.have.property('totalmemHR').to.be.a('string');
-      exMem.to.have.property('freememHR').to.be.a('string');
+      exMem.to.have.property('totalMemHR').to.be.a('string');
+      exMem.to.have.property('freeMemHR').to.be.a('string');
     });
   });
 

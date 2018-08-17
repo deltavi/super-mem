@@ -62,16 +62,16 @@ exports.memoryUsage = function (hrOnly) {
  * @param {boolean} [hrOnly] Human readable format only, default `false`
  * @example
  * {
- *     "totalmem": 17073917952,
- *     "freemem": 11155980288,
- *     "totalmemHR": "17.1 GB",
- *     "freememHR": "11.2 GB"
+ *     "totalMem": 17073917952,
+ *     "freeMem": 11155980288,
+ *     "totalMemHR": "17.1 GB",
+ *     "freeMemHR": "11.2 GB"
  * }
  */
 exports.osMemory = function (hrOnly) {
   const mem = {
-    totalmem: os.totalmem(),
-    freemem: os.freemem()
+    totalMem: os.totalmem(),
+    freeMem: os.freemem()
   };
   return exports.convertObjInHumanReadableFormat(mem, hrOnly);
 };
