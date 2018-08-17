@@ -128,11 +128,9 @@ exports.printMemoryStatus = function (decorator) {
  * @example 
  * var superMem = require('super-mem');
  * const heapObserver = new superMem.HeapObserver(80, 5000);
- * heapObserver.appHandler(function (mem, percentage) {
+ * heapObserver.addHandler(function (mem, percentage) {
  *   console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
  *   console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
- *   done();
- *   heapObserver.stop();
  * });
  * heapObserver.start();
  */
@@ -160,7 +158,7 @@ exports.HeapObserver = function (limitPerc, interval) {
     }
   };
 
-  this.appHandler = function (handler) {
+  this.addHandler = function (handler) {
     handlers.push(handler);
   };
 };

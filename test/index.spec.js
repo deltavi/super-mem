@@ -89,7 +89,7 @@ suite('super-mem', function () {
   suite('#HeapObserver', function () {
     test('should print if the heap has exceeded the percentage limits', function (done) {
       const heapObserver = new superMem.HeapObserver(1, 10);
-      heapObserver.appHandler(function (mem, percentage) {
+      heapObserver.addHandler(function (mem, percentage) {
         console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
         console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
         done();

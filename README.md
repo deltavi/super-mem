@@ -127,11 +127,9 @@ Monitors the heap memory and if the heap used exceeds the `limitPerc`, it notifi
 ```javascript
 var superMem = require('super-mem');
 const heapObserver = new superMem.HeapObserver(80, 5000);
-heapObserver.appHandler(function (mem, percentage) {
+heapObserver.addHandler(function (mem, percentage) {
   console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
   console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
-  done();
-  heapObserver.stop();
 });
 heapObserver.start();
 ```
