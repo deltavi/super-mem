@@ -2,6 +2,7 @@
 
 const prettyBytes = require('pretty-bytes');
 const repeat = require('repeat-string');
+const sizeof = require('sizeof');
 const os = require('os');
 
 /**
@@ -9,7 +10,7 @@ const os = require('os');
  * Returns an object with values in bytes and human readable format.
  * Note that it uses base-10. 
  * 
- * @param {Object} [memoryObject] Object to convert
+ * @param {Object} memoryObject Object to convert
  * @param {boolean} [hrOnly] Human readable format only, default `false`
  * @example
  * {
@@ -75,6 +76,24 @@ exports.osMemory = function (hrOnly) {
   return exports.convertObjInHumanReadableFormat(mem, hrOnly);
 };
 
+
+/**
+ * Returns the size of the inputObject, measured in bytes and human readable format.
+ * Note that it uses base-10. 
+ * @param {Object} inputObject Object to measure the size
+ * @param {boolean} [hrOnly] Human readable format only, default `false`
+ * @example
+ * {
+ *   "size": 20488,
+ *   "sizeHR": "20.5 kB"
+ * }
+ */
+exports.sizeOf = function (inputObject, hrOnly) {
+  const res = {
+    size: sizeof.sizeof(inputObject)
+  };
+  return exports.convertObjInHumanReadableFormat(res, hrOnly);
+};
 
 /**
  * Print the memory status on console

@@ -18,9 +18,12 @@ Utility to manage Node.js memory
 -   [osMemory](#osmemory)
     -   [Parameters](#parameters-1)
     -   [Examples](#examples-1)
--   [printMemoryStatus](#printmemorystatus)
+-   [sizeOf](#sizeof)
     -   [Parameters](#parameters-2)
     -   [Examples](#examples-2)
+-   [printMemoryStatus](#printmemorystatus)
+    -   [Parameters](#parameters-3)
+    -   [Examples](#examples-3)
 
 ## memoryUsage
 
@@ -63,6 +66,25 @@ Note that it uses base-10.
     "freemem": 11155980288,
     "totalmemHR": "17.1 GB",
     "freememHR": "11.2 GB"
+}
+```
+
+## sizeOf
+
+Returns the size of the inputObject, measured in bytes and human readable format.
+Note that it uses base-10.
+
+### Parameters
+
+-   `inputObject` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object to measure the size
+-   `hrOnly` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** Human readable format only, default `false`
+
+### Examples
+
+```javascript
+{
+  "size": 20488,
+  "sizeHR": "20.5 kB"
 }
 ```
 

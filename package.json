@@ -1,6 +1,6 @@
 {
   "name": "super-mem",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Utility to manage Node.js memory",
   "main": "index.js",
   "scripts": {
@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "pretty-bytes": "^5.1.0",
-    "repeat-string": "^1.6.1"
+    "repeat-string": "^1.6.1",
+    "sizeof": "^1.0.0"
   }
 }

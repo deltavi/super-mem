@@ -72,4 +72,17 @@ suite('super-mem', function () {
       superMem.printObject("Object to print", { value: "text 1" });
     });
   });
+
+  suite('#sizeOf()', function () {
+    test('should return the size of the object', function () {
+      const obj = { test: '0123456789' };
+      for (var i = 0; i < 10; i++) {
+        obj.test += obj.test;
+      }
+      const res = superMem.sizeOf(obj);
+      console.log(JSON.stringify(res, null, 2));
+      assert.equal(res.size, 20488);
+      assert.equal(res.sizeHR, '20.5 kB');
+    });
+  });
 });
