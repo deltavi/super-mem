@@ -78,7 +78,7 @@ exports.osMemory = function (hrOnly) {
 
 
 /**
- * Returns the size of the inputObject, measured in bytes and human readable format.
+ * Returns the size of the 'inputObject', measured in bytes and human readable format.
  * Note that it uses base-10. 
  * @param {Object} inputObject Object to measure the size
  * @param {boolean} [hrOnly] Human readable format only, default `false`
@@ -120,6 +120,51 @@ exports.printMemoryStatus = function (decorator) {
   exports.printObject('OS memory', exports.osMemory(true));
   console.log(footer);
 };
+
+/**
+ * Monitors the heap memory and if the heap used exceeds the `limitPerc`, it notifies this to the handling functions
+ * @param {number} limitPerc Limit exceeded which the handling function is called
+ * @param {number} [interval] Optional, time interval between one memory reading and the other, default `10000`
+ * @example 
+ * var superMem = require('super-mem');
+ * const heapObserver = new superMem.HeapObserver(80, 5000);
+ * heapObserver.appHandler(function (mem, percentage) {
+ *   console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
+ *   console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
+ *   done();
+ *   heapObserver.stop();
+ * });
+ * heapObserver.start();
+ */
+exports.HeapObserver = function (limitPerc, interval) {
+  interval = interval || 10000; // default 10s
+  const handlers = [];
+  var task = null;
+
+  this.start = function () {
+    task = setInterval(function () {
+      const mem = process.memoryUsage();
+      const actualPerc = (100 / mem.heapTotal) * mem.heapUsed;
+      if (actualPerc >= limitPerc) {
+        for (var i = 0; i < handlers.length; i++) {
+          handlers[i](mem, actualPerc); // call handler
+        }
+      }
+    }, interval);
+  };
+
+  this.stop = function () {
+    if (task) {
+      clearInterval(task);
+      task = null;
+    }
+  };
+
+  this.appHandler = function (handler) {
+    handlers.push(handler);
+  };
+};
+
 
 /**
  * @private

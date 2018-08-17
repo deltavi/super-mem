@@ -1,8 +1,8 @@
 'use strict';
-var assert = require('assert');
-var chai = require("chai");
-var expect = chai.expect;
-var superMem = require('../index');
+const assert = require('assert');
+const chai = require('chai');
+const expect = chai.expect;
+const superMem = require('../index');
 
 suite('super-mem', function () {
   suite('#memoryUsage()', function () {
@@ -68,8 +68,8 @@ suite('super-mem', function () {
 
   suite('#printObject()', function () {
     test('should print the test object', function () {
-      superMem.printObject("Test 1", { t: 1 });
-      superMem.printObject("Object to print", { value: "text 1" });
+      superMem.printObject('Test 1', { t: 1 });
+      superMem.printObject('Object to print', { value: 'text 1' });
     });
   });
 
@@ -83,6 +83,19 @@ suite('super-mem', function () {
       console.log(JSON.stringify(res, null, 2));
       assert.equal(res.size, 20488);
       assert.equal(res.sizeHR, '20.5 kB');
+    });
+  });
+
+  suite('#HeapObserver', function () {
+    test('should print if the heap has exceeded the percentage limits', function (done) {
+      const heapObserver = new superMem.HeapObserver(1, 10);
+      heapObserver.appHandler(function (mem, percentage) {
+        console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
+        console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
+        done();
+        heapObserver.stop();
+      });
+      heapObserver.start();
     });
   });
 });

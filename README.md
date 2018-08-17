@@ -24,6 +24,9 @@ Utility to manage Node.js memory
 -   [printMemoryStatus](#printmemorystatus)
     -   [Parameters](#parameters-3)
     -   [Examples](#examples-3)
+-   [HeapObserver](#heapobserver)
+    -   [Parameters](#parameters-4)
+    -   [Examples](#examples-4)
 
 ## memoryUsage
 
@@ -71,7 +74,7 @@ Note that it uses base-10.
 
 ## sizeOf
 
-Returns the size of the inputObject, measured in bytes and human readable format.
+Returns the size of the 'inputObject', measured in bytes and human readable format.
 Note that it uses base-10.
 
 ### Parameters
@@ -108,4 +111,27 @@ Print the memory status on console
     totalmem = 17.1 GB
     freemem = 11.1 GB
 -------------------------------------------------------
+```
+
+## HeapObserver
+
+Monitors the heap memory and if the heap used exceeds the `limitPerc`, it notifies this to the handling functions
+
+### Parameters
+
+-   `limitPerc` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Limit exceeded which the handling function is called
+-   `interval` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Optional, time interval between one memory reading and the other, default `10000`
+
+### Examples
+
+```javascript
+var superMem = require('super-mem');
+const heapObserver = new superMem.HeapObserver(80, 5000);
+heapObserver.appHandler(function (mem, percentage) {
+  console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
+  console.log('HeapObserver PERC: ' + parseInt(percentage) + ' %');
+  done();
+  heapObserver.stop();
+});
+heapObserver.start();
 ```
