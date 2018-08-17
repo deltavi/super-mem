@@ -15,10 +15,12 @@ Utility to manage Node.js memory
 -   [memoryUsage](#memoryusage)
     -   [Parameters](#parameters)
     -   [Examples](#examples)
--   [printMemoryStatus](#printmemorystatus)
+-   [osMemory](#osmemory)
     -   [Parameters](#parameters-1)
--   [printObject](#printobject)
+    -   [Examples](#examples-1)
+-   [printMemoryStatus](#printmemorystatus)
     -   [Parameters](#parameters-2)
+    -   [Examples](#examples-2)
 
 ## memoryUsage
 
@@ -31,16 +33,34 @@ Returns an object describing the memory usage of the Node.js process measured in
 ### Examples
 
 ```javascript
-Result:
 {
- "rss": 42360832,
- "heapTotal": 35254272,
- "heapUsed": 16044848,
- "external": 108125,
- "rssHR": "42.4 MB",
- "heapTotalHR": "35.3 MB",
- "heapUsedHR": "16 MB",
- "externalHR": "108 kB"
+  "rss": 42360832,
+  "heapTotal": 35254272,
+  "heapUsed": 16044848,
+  "external": 108125,
+  "rssHR": "42.4 MB",
+  "heapTotalHR": "35.3 MB",
+  "heapUsedHR": "16 MB",
+  "externalHR": "108 kB"
+}
+```
+
+## osMemory
+
+Returns an object describing the OS memory measured in bytes and human readable format
+
+### Parameters
+
+-   `hrOnly` **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)?** Human readable format only, default `false`
+
+### Examples
+
+```javascript
+{
+    "totalmem": 17073917952,
+    "freemem": 11155980288,
+    "totalmemHR": "17.1 GB",
+    "freememHR": "11.2 GB"
 }
 ```
 
@@ -52,11 +72,16 @@ Print the memory status on console
 
 -   `decorator` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)?** Optional string to create header and footer, default `"-"`
 
-## printObject
+### Examples
 
-Print the object passed on console
-
-### Parameters
-
--   `label` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Label to print as header
--   `object` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object to print
+```javascript
+-------------------- Memory Status --------------------
+ • Process memory usage:
+    rss = 45.7 MB
+    heapTotal = 35.8 MB
+    heapUsed = 18.7 MB
+ • OS memory:
+    totalmem = 17.1 GB
+    freemem = 11.1 GB
+-------------------------------------------------------
+```
