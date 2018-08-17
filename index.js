@@ -126,7 +126,7 @@ exports.printMemoryStatus = function (decorator) {
  * @param {number} limitPerc Limit exceeded which the handling function is called
  * @param {number} [interval] Optional, time interval between one memory reading and the other, default `10000`
  * @example 
- * var superMem = require('super-mem');
+ * const superMem = require('super-mem');
  * const heapObserver = new superMem.HeapObserver(80, 5000);
  * heapObserver.addHandler(function (mem, percentage) {
  *   console.log('HeapObserver MEM: ' + JSON.stringify(mem, null, 2));
