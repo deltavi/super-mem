@@ -124,7 +124,7 @@ exports.printMemoryStatus = function (decorator) {
 /**
  * Monitors the heap memory and if the heap used exceeds the `limitPerc`, it notifies this to the handling functions
  * @param {number} limitPerc Limit exceeded which the handling function is called
- * @param {number} [interval] Optional, time interval between one memory reading and the other, default `10000`
+ * @param {number} [interval] Optional, time interval between memory reading, default `10000`
  * @example 
  * const superMem = require('super-mem');
  * const heapObserver = new superMem.HeapObserver(80, 5000);

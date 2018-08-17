@@ -120,7 +120,7 @@ Monitors the heap memory and if the heap used exceeds the `limitPerc`, it notifi
 ### Parameters
 
 -   `limitPerc` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Limit exceeded which the handling function is called
--   `interval` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Optional, time interval between one memory reading and the other, default `10000`
+-   `interval` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)?** Optional, time interval between memory reading, default `10000`
 
 ### Examples
 
