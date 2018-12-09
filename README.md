@@ -1,5 +1,7 @@
 # ![super-mem](docs/super-mem.png) Super Mem [![Build Status](https://travis-ci.org/deltavi/super-mem.svg?branch=master)](https://travis-ci.org/deltavi/super-mem)
 
+![super-mem](http://www.vincenzodevivo.com/lab/npm-badges/npm-badge.php?name=super-mem)
+
 Utility to manage Node.js memory
 
 ## Install
