@@ -1,6 +1,6 @@
 {
   "name": "super-mem",
-  "version": "0.0.6",
+  "version": "1.0.7",
   "description": "Utility to manage Node.js memory",
   "main": "index.js",
   "scripts": {
@@ -29,11 +29,12 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "mocha-jshint": "^2.3.1",
-    "documentation": "^8.0.2"
+    "documentation": "^12.1.4"
   },
   "dependencies": {
     "pretty-bytes": "^5.1.0",
     "repeat-string": "^1.6.1",
     "sizeof": "^1.0.0"
-  }
+  },
+  "runkitExampleFilename": "runkit-example.js"
 }
